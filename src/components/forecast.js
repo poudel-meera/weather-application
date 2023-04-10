@@ -1,5 +1,5 @@
 import React from "react";
-import '../app.css';
+import "../app.css";
 import {
   Accordion,
   AccordionItem,
@@ -8,11 +8,12 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 
+import AirQuality from "./air-quality"; // import the AirQuality component
+
 const Forecast = ({ data }) => {
-  const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
   const dayInWeek = new Date().getDay();
   const forecastDays = weekdays.slice(dayInWeek, weekdays.length).concat(weekdays.slice(0, dayInWeek));
-
 
   return (
     <div>
@@ -24,6 +25,10 @@ const Forecast = ({ data }) => {
                 <div className="daily-item">
                   <img src={`icons/${item.weather[0].icon}.png`} className="icon-small" alt="weather" />
                   <label className="day">{forecastDays[index]}</label>
+
+                  {/* AirQuality component */}
+                  <label className="air-quality"> <AirQuality airQuality={item.airQuality}/> </label>
+
                   <label className="description">{item.weather[0].description}</label>
                   <label className="min-max">{Math.round(item.main.temp_max)}°F /{Math.round(item.main.temp_min)}°F</label>
                 </div>
