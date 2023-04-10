@@ -13,3 +13,7 @@ export const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 export const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5";
 export const WEATHER_API_KEY = "55f13b792e24b0777aa5b65fbb547646";
 
+// API KEY FROM AIR VISUAL
+export const AIR_VISUAL_API_URL = "https://api.airvisual.com/v2";
+export const AIR_VISUAL_API_KEY = "72373108-aa9c-4581-904d-6292ab0f2a82";
+
